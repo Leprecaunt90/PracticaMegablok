@@ -1,1 +1,5 @@
-<p>wifi-selector works!</p>
+<select id="wifis" name="wifis">  
+    <option *ngFor="let item of data" [value]="item">
+        {{ item.SSID }}
+     </option>
+</select>
