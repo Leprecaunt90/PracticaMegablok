@@ -1,20 +1,26 @@
 <div class="form">
     <div class="title">Welcome</div>
     <div class="subtitle">Let's complete your configuration! 1/2</div>
-    <div class="input-container ic1">
-        <div class="subtitle2">Select your Wifi</div>
-        <div class="select">
-        <select  name="format" id="format" class="">  
-            <option *ngFor="let item of data" [value]="item">
-                {{ item.SSID }}
-            </option>
-        </select>
+    <form #wifiForm= "ngForm" (ngSubmit) = "submit(wifiForm)">
+        <div class="input-container ic1">
+            <div class="subtitle2">Select your Wifi</div>
+            <div class="select">
+            <select required name="wifiName" #wifiName ="ngModel" id="format" class="" ngModel>  
+                <option *ngFor="let item of data" [value]="item">
+                    {{ item.SSID }}
+                </option>
+            </select>
+            </div>
         </div>
-    </div>
-    <div class="input-container ic2">
-        <input id="lastname" class="input" type="text" placeholder=" " />
-        <div class="cut"></div>
-        <label for="lastname" class="placeholder">Wifi password</label>
-    </div>
-    <button type="text" class="submit" (click)="goToPage('InstalKey')">submit</button>
+        <div class="input-container ic2">
+            <input required id="wifiPass" #wifiPass ="ngModel" class="input" type="text" name="wifiPass" placeholder=" " ngModel/>
+            <div class="alert alert-danger" *ngIf="wifiPass.touched && !wifiPass.valid">pass is required</div>
+            <div class="cut"></div>
+            <label for="wifiPass" class="placeholder">Wifi password</label>
+        </div>
+        <button type="submit" class="submit" >submit</button>
+        <div class="loader" id="spinner" [style.visibility] =  "spinner"></div>
+    </form>
   </div>
+
+  

@@ -1,0 +1,15 @@
+div{
+    width: 100%;
+    display:block;
+    margin:auto;
+}
+h2{
+    text-shadow: 2px 2px black;
+    text-align: center;
+    line-height:100px; 
+    vertical-align:middle;
+    width: 100%;
+    color: white;
+    display:block;
+    margin:auto;
+}

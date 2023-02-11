@@ -1,11 +1,16 @@
 <div class="form">
     <div class="title">Welcome</div>
     <div class="subtitle">Let's complete your configuration! 2/2</div>
-    <div class="input-container ic1">
-        <div class="input-container ic2">
-            <input id="email" class="input" type="text" placeholder=" " />
-            <div class="cut"></div>
-            <label for="email" class="placeholder">Installation key</label>
+    <form #keyForm= "ngForm" (ngSubmit) = "submit(keyForm)">
+        <div class="input-container ic1">
+            <div class="input-container ic2">
+                <input required id="instalKey" #instalKey ="ngModel" class="input" type="text" name="instalKey" placeholder=" "  ngModel/>
+                <div class="cut"></div>
+                <label for="instalKey" class="placeholder">Installation key</label>
+                <div class="alert alert-danger" *ngIf="instalKey.touched && !instalKey.valid">Key is required</div>
+            </div>
         </div>
-    <button type="text" class="submit">submit</button>
+        <button type="text" class="submit">submit</button>
+        <div class="loader" id="spinner" [style.visibility] =  "spinner"></div>
+    </form>
   </div>

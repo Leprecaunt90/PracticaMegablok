@@ -8,18 +8,22 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { WifiSelectorComponent } from './wifi-selector/wifi-selector.component';
 import {HttpClientModule} from '@angular/common/http';
 import { InstalationKeyComponent } from './instalation-key/instalation-key.component'
+import { FormsModule } from '@angular/forms';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     WifiSelectorComponent,
-    InstalationKeyComponent
+    InstalationKeyComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
