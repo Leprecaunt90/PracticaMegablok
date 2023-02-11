@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-wifi-selector',
@@ -12,7 +13,7 @@ export class WifiSelectorComponent implements OnInit {
  html : any
  @ViewChild('wifis') myNameElem: any;
  
- constructor(private http: HttpClient){}
+ constructor(private http: HttpClient, private router: Router){}
 
   ngOnInit(): void {
     const url: string = 'https://raw.githubusercontent.com/lbernalsierra/FakeAPI/main/Networks.json';
@@ -22,7 +23,9 @@ export class WifiSelectorComponent implements OnInit {
       this.html = ""
     });
   } 
- 
+   goToPage(pageName:string){
+    this.router.navigate([`${pageName}`]);
+  }
 }
 
 

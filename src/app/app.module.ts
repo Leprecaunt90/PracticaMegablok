@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { WifiSelectorComponent } from './wifi-selector/wifi-selector.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { InstalationKeyComponent } from './instalation-key/instalation-key.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    WifiSelectorComponent
+    WifiSelectorComponent,
+    InstalationKeyComponent
   ],
   imports: [
     BrowserModule,

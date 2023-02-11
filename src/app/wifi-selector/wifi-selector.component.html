@@ -1,5 +1,20 @@
-<select id="wifis" name="wifis">  
-    <option *ngFor="let item of data" [value]="item">
-        {{ item.SSID }}
-     </option>
-</select>
+<div class="form">
+    <div class="title">Welcome</div>
+    <div class="subtitle">Let's complete your configuration! 1/2</div>
+    <div class="input-container ic1">
+        <div class="subtitle2">Select your Wifi</div>
+        <div class="select">
+        <select  name="format" id="format" class="">  
+            <option *ngFor="let item of data" [value]="item">
+                {{ item.SSID }}
+            </option>
+        </select>
+        </div>
+    </div>
+    <div class="input-container ic2">
+        <input id="lastname" class="input" type="text" placeholder=" " />
+        <div class="cut"></div>
+        <label for="lastname" class="placeholder">Wifi password</label>
+    </div>
+    <button type="text" class="submit" (click)="goToPage('InstalKey')">submit</button>
+  </div>
