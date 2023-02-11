@@ -12,11 +12,13 @@ export class InstalationKeyComponent {
 
   constructor(private http: HttpClient, private router: Router){}
   
-  submit(wifiForm: any){
-    console.log(wifiForm.value)
-    //we can use this pass to validate on backend
+  submit(keyForm: any){
+    console.log(keyForm.value)
+    var instalKey = keyForm.value.instalKey 
+    //we can use this key to validate on backend
+    localStorage.setItem('InstalationKey', instalKey)
     this.spinner = "visible"
-    const url = 'https://raw.githubusercontent.com/lbernalsierra/FakeAPI/main/SetWifi.json';
+    const url = 'https://raw.githubusercontent.com/lbernalsierra/FakeAPI/main/CheckLicense.json';
     this.http.get(url).subscribe((response) =>{
       this.validate =  response
       if(this.validate.valid == true){
