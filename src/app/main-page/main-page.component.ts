@@ -7,10 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit{
   localstor : any
+  //we get the local storage and see wich is your key
   ngOnInit(): void {
     this.localstor = localStorage.getItem('InstalationKey');
-    console.log(this.localstor);
   }
-  
-
 }

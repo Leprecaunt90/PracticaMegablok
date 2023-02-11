@@ -16,6 +16,7 @@ export class WifiSelectorComponent implements OnInit {
  
  constructor(private http: HttpClient, private router: Router){}
 
+ //get json from wifis list
   ngOnInit(): void {
     const url = 'https://raw.githubusercontent.com/lbernalsierra/FakeAPI/main/Networks.json';
     this.http.get(url).subscribe((response) =>{

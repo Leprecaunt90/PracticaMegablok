@@ -5,6 +5,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { WifiSelectorComponent } from './wifi-selector/wifi-selector.component';
 
+// all routes names for the app
 const routes: Routes = [
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
   { path: 'welcome', component: WelcomeComponent},

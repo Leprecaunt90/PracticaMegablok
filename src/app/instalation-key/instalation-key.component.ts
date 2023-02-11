@@ -12,6 +12,7 @@ export class InstalationKeyComponent {
 
   constructor(private http: HttpClient, private router: Router){}
   
+  // we save the key in local storage, we check if this key is valid and go to main page
   submit(keyForm: any){
     console.log(keyForm.value)
     var instalKey = keyForm.value.instalKey 
